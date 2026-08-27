@@ -12,13 +12,13 @@ Web estática mínima servida con **Node.js** (sin dependencias): fondo verde co
 
 ```bash
 npm start
-# abrir http://localhost:8200
+# abrir http://localhost:3000
 ```
 
 El puerto se puede cambiar con la variable de entorno `PORT`:
 
 ```bash
-PORT=3000 npm start
+PORT=8080 npm start
 ```
 
 ## Desplegar en Dokploy
@@ -26,6 +26,6 @@ PORT=3000 npm start
 1. Crear una aplicación nueva (**Application**) en Dokploy.
 2. Fuente: este repositorio Git.
 3. Build Type: **Nixpacks** (detecta Node automáticamente y ejecuta `npm start`).
-4. En **Environment**, definir `PORT` (por ejemplo `8200`) y en la pestaña de red/puertos
-   mapear ese mismo puerto de la aplicación.
+4. Puerto de la aplicación: **3000** (el que expone `server.js` por defecto).
+   Si necesitas otro, define la variable de entorno `PORT` en **Environment**.
 5. Asignar el dominio y desplegar.
